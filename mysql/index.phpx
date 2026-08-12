@@ -1000,10 +1000,32 @@ export function closeSync($handle) {
     return db_close_sync($handle)
 }
 
+/// docid: phpx/db-mysql/connect()
+/// <Function name="connect">
+///   <Description>PHPX standard module function `connect` from `db-mysql`.</Description>
+///   <Parameter name="$config" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $config.
+///   </Parameter>
+///   <ReturnType type="mixed" typeLink="/docs/php/types/mixed" />
+/// </Function>
 export async function connect($config) {
     return await openHandle('mysql', $config)
 }
 
+/// docid: phpx/db-mysql/query()
+/// <Function name="query">
+///   <Description>PHPX standard module function `query` from `db-mysql`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <Parameter name="$sql" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $sql.
+///   </Parameter>
+///   <Parameter name="$params" type="mixed" required="false" typeLink="/docs/php/types/mixed">
+///     Parameter $params.
+///   </Parameter>
+///   <ReturnType type="mixed" typeLink="/docs/php/types/mixed" />
+/// </Function>
 export async function query($handle, $sql, $params = []) {
     if (__my_is_wire_handle($handle)) {
         return querySync($handle, $sql, $params)
@@ -1011,6 +1033,20 @@ export async function query($handle, $sql, $params = []) {
     return await db_query($handle, $sql, $params)
 }
 
+/// docid: phpx/db-mysql/queryOne()
+/// <Function name="queryOne">
+///   <Description>PHPX standard module function `queryOne` from `db-mysql`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <Parameter name="$sql" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $sql.
+///   </Parameter>
+///   <Parameter name="$params" type="mixed" required="false" typeLink="/docs/php/types/mixed">
+///     Parameter $params.
+///   </Parameter>
+///   <ReturnType type="mixed" typeLink="/docs/php/types/mixed" />
+/// </Function>
 export async function queryOne($handle, $sql, $params = []) {
     if (__my_is_wire_handle($handle)) {
         return queryOneSync($handle, $sql, $params)
@@ -1018,6 +1054,20 @@ export async function queryOne($handle, $sql, $params = []) {
     return await db_query_one($handle, $sql, $params)
 }
 
+/// docid: phpx/db-mysql/exec()
+/// <Function name="exec">
+///   <Description>PHPX standard module function `exec` from `db-mysql`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <Parameter name="$sql" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $sql.
+///   </Parameter>
+///   <Parameter name="$params" type="mixed" required="false" typeLink="/docs/php/types/mixed">
+///     Parameter $params.
+///   </Parameter>
+///   <ReturnType type="mixed" typeLink="/docs/php/types/mixed" />
+/// </Function>
 export async function exec($handle, $sql, $params = []) {
     if (__my_is_wire_handle($handle)) {
         return execSync($handle, $sql, $params)
@@ -1025,6 +1075,14 @@ export async function exec($handle, $sql, $params = []) {
     return await db_exec($handle, $sql, $params)
 }
 
+/// docid: phpx/db-mysql/begin()
+/// <Function name="begin">
+///   <Description>PHPX standard module function `begin` from `db-mysql`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <ReturnType type="mixed" typeLink="/docs/php/types/mixed" />
+/// </Function>
 export async function begin($handle) {
     if (__my_is_wire_handle($handle)) {
         return beginSync($handle)
@@ -1032,6 +1090,14 @@ export async function begin($handle) {
     return await db_begin($handle)
 }
 
+/// docid: phpx/db-mysql/commit()
+/// <Function name="commit">
+///   <Description>PHPX standard module function `commit` from `db-mysql`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <ReturnType type="mixed" typeLink="/docs/php/types/mixed" />
+/// </Function>
 export async function commit($handle) {
     if (__my_is_wire_handle($handle)) {
         return commitSync($handle)
@@ -1039,6 +1105,14 @@ export async function commit($handle) {
     return await db_commit($handle)
 }
 
+/// docid: phpx/db-mysql/rollback()
+/// <Function name="rollback">
+///   <Description>PHPX standard module function `rollback` from `db-mysql`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <ReturnType type="mixed" typeLink="/docs/php/types/mixed" />
+/// </Function>
 export async function rollback($handle) {
     if (__my_is_wire_handle($handle)) {
         return rollbackSync($handle)
@@ -1046,6 +1120,14 @@ export async function rollback($handle) {
     return await db_rollback($handle)
 }
 
+/// docid: phpx/db-mysql/close()
+/// <Function name="close">
+///   <Description>PHPX standard module function `close` from `db-mysql`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <ReturnType type="mixed" typeLink="/docs/php/types/mixed" />
+/// </Function>
 export async function close($handle) {
     if (__my_is_wire_handle($handle)) {
         return closeSync($handle)

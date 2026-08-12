@@ -320,6 +320,17 @@ export function statsSync() {
     return $res
 }
 
+/// docid: phpx/db/open()
+/// <Function name="open">
+///   <Description>PHPX standard module function `open` from `db`.</Description>
+///   <Parameter name="$driver" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $driver.
+///   </Parameter>
+///   <Parameter name="$config" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $config.
+///   </Parameter>
+///   <ReturnType type="mixed" typeLink="/docs/php/types/mixed" />
+/// </Function>
 export async function open($driver, $config) {
     $raw = await bridge_async('db', 'open', {
         driver: $driver,
@@ -328,10 +339,35 @@ export async function open($driver, $config) {
     return normalize_result($raw)
 }
 
+/// docid: phpx/db/openHandle()
+/// <Function name="openHandle">
+///   <Description>PHPX standard module function `openHandle` from `db`.</Description>
+///   <Parameter name="$driver" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $driver.
+///   </Parameter>
+///   <Parameter name="$config" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $config.
+///   </Parameter>
+///   <ReturnType type="mixed" typeLink="/docs/php/types/mixed" />
+/// </Function>
 export async function openHandle($driver, $config) {
     return extract_handle(await open($driver, $config))
 }
 
+/// docid: phpx/db/query()
+/// <Function name="query">
+///   <Description>PHPX standard module function `query` from `db`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <Parameter name="$sql" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $sql.
+///   </Parameter>
+///   <Parameter name="$params" type="mixed" required="false" typeLink="/docs/php/types/mixed">
+///     Parameter $params.
+///   </Parameter>
+///   <ReturnType type="mixed" typeLink="/docs/php/types/mixed" />
+/// </Function>
 export async function query($handle, $sql, $params = []) {
     $safe_params = normalize_params($params)
     $raw = await bridge_async('db', 'query', {
@@ -342,6 +378,20 @@ export async function query($handle, $sql, $params = []) {
     return normalize_result($raw)
 }
 
+/// docid: phpx/db/queryOne()
+/// <Function name="queryOne">
+///   <Description>PHPX standard module function `queryOne` from `db`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <Parameter name="$sql" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $sql.
+///   </Parameter>
+///   <Parameter name="$params" type="mixed" required="false" typeLink="/docs/php/types/mixed">
+///     Parameter $params.
+///   </Parameter>
+///   <ReturnType type="mixed" typeLink="/docs/php/types/mixed" />
+/// </Function>
 export async function queryOne($handle, $sql, $params = []) {
     $rows = rows(await query($handle, $sql, normalize_params($params)))
     if (!result_is_ok($rows)) {
@@ -353,6 +403,20 @@ export async function queryOne($handle, $sql, $params = []) {
     return result_ok($rows->value[0])
 }
 
+/// docid: phpx/db/exec()
+/// <Function name="exec">
+///   <Description>PHPX standard module function `exec` from `db`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <Parameter name="$sql" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $sql.
+///   </Parameter>
+///   <Parameter name="$params" type="mixed" required="false" typeLink="/docs/php/types/mixed">
+///     Parameter $params.
+///   </Parameter>
+///   <ReturnType type="mixed" typeLink="/docs/php/types/mixed" />
+/// </Function>
 export async function exec($handle, $sql, $params = []) {
     $safe_params = normalize_params($params)
     $raw = await bridge_async('db', 'exec', {
@@ -363,26 +427,63 @@ export async function exec($handle, $sql, $params = []) {
     return normalize_result($raw)
 }
 
+/// docid: phpx/db/begin()
+/// <Function name="begin">
+///   <Description>PHPX standard module function `begin` from `db`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <ReturnType type="mixed" typeLink="/docs/php/types/mixed" />
+/// </Function>
 export async function begin($handle) {
     $raw = await bridge_async('db', 'begin', { handle: $handle })
     return normalize_result($raw)
 }
 
+/// docid: phpx/db/commit()
+/// <Function name="commit">
+///   <Description>PHPX standard module function `commit` from `db`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <ReturnType type="mixed" typeLink="/docs/php/types/mixed" />
+/// </Function>
 export async function commit($handle) {
     $raw = await bridge_async('db', 'commit', { handle: $handle })
     return normalize_result($raw)
 }
 
+/// docid: phpx/db/rollback()
+/// <Function name="rollback">
+///   <Description>PHPX standard module function `rollback` from `db`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <ReturnType type="mixed" typeLink="/docs/php/types/mixed" />
+/// </Function>
 export async function rollback($handle) {
     $raw = await bridge_async('db', 'rollback', { handle: $handle })
     return normalize_result($raw)
 }
 
+/// docid: phpx/db/close()
+/// <Function name="close">
+///   <Description>PHPX standard module function `close` from `db`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <ReturnType type="mixed" typeLink="/docs/php/types/mixed" />
+/// </Function>
 export async function close($handle) {
     $raw = await bridge_async('db', 'close', { handle: $handle })
     return normalize_result($raw)
 }
 
+/// docid: phpx/db/stats()
+/// <Function name="stats">
+///   <Description>PHPX standard module function `stats` from `db`.</Description>
+///   <ReturnType type="mixed" typeLink="/docs/php/types/mixed" />
+/// </Function>
 export async function stats() {
     return statsSync()
 }

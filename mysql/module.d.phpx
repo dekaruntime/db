@@ -1,21 +1,213 @@
 import { Result } from 'core/result'
 
+/// docid: phpx/db-mysql/connect()
+/// <Function name="connect">
+///   <Description>PHPX standard module function `connect` from `db-mysql`.</Description>
+///   <Parameter name="$config" type="Object" required="true">
+///     Parameter $config.
+///   </Parameter>
+///   <ReturnType type="Promise<Result<mixed, string>>" />
+/// </Function>
 export function connect($config: Object): Promise<Result<mixed, string>>
+
+/// docid: phpx/db-mysql/query()
+/// <Function name="query">
+///   <Description>PHPX standard module function `query` from `db-mysql`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <Parameter name="$sql" type="string" required="true" typeLink="/docs/php/types/string">
+///     Parameter $sql.
+///   </Parameter>
+///   <Parameter name="$params" type="array" required="false" typeLink="/docs/php/types/array">
+///     Parameter $params.
+///   </Parameter>
+///   <ReturnType type="Promise<Result<Object<" />
+/// </Function>
 export function query($handle: mixed, $sql: string, $params: array = []): Promise<Result<Object<{ rows: array<Object> }>, string>>
+
+/// docid: phpx/db-mysql/queryOne()
+/// <Function name="queryOne">
+///   <Description>PHPX standard module function `queryOne` from `db-mysql`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <Parameter name="$sql" type="string" required="true" typeLink="/docs/php/types/string">
+///     Parameter $sql.
+///   </Parameter>
+///   <Parameter name="$params" type="array" required="false" typeLink="/docs/php/types/array">
+///     Parameter $params.
+///   </Parameter>
+///   <ReturnType type="Promise<Result<Object, string>>" />
+/// </Function>
 export function queryOne($handle: mixed, $sql: string, $params: array = []): Promise<Result<Object, string>>
+
+/// docid: phpx/db-mysql/exec()
+/// <Function name="exec">
+///   <Description>PHPX standard module function `exec` from `db-mysql`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <Parameter name="$sql" type="string" required="true" typeLink="/docs/php/types/string">
+///     Parameter $sql.
+///   </Parameter>
+///   <Parameter name="$params" type="array" required="false" typeLink="/docs/php/types/array">
+///     Parameter $params.
+///   </Parameter>
+///   <ReturnType type="Promise<Result<Object<" />
+/// </Function>
 export function exec($handle: mixed, $sql: string, $params: array = []): Promise<Result<Object<{ affected_rows: int }>, string>>
+
+/// docid: phpx/db-mysql/begin()
+/// <Function name="begin">
+///   <Description>PHPX standard module function `begin` from `db-mysql`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <ReturnType type="Promise<Result<Object, string>>" />
+/// </Function>
 export function begin($handle: mixed): Promise<Result<Object, string>>
+
+/// docid: phpx/db-mysql/commit()
+/// <Function name="commit">
+///   <Description>PHPX standard module function `commit` from `db-mysql`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <ReturnType type="Promise<Result<Object, string>>" />
+/// </Function>
 export function commit($handle: mixed): Promise<Result<Object, string>>
+
+/// docid: phpx/db-mysql/rollback()
+/// <Function name="rollback">
+///   <Description>PHPX standard module function `rollback` from `db-mysql`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <ReturnType type="Promise<Result<Object, string>>" />
+/// </Function>
 export function rollback($handle: mixed): Promise<Result<Object, string>>
+
+/// docid: phpx/db-mysql/close()
+/// <Function name="close">
+///   <Description>PHPX standard module function `close` from `db-mysql`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <ReturnType type="Promise<Result<Object, string>>" />
+/// </Function>
 export function close($handle: mixed): Promise<Result<Object, string>>
 
+/// docid: phpx/db-mysql/connectSync()
+/// <Function name="connectSync">
+///   <Description>PHPX standard module function `connectSync` from `db-mysql`.</Description>
+///   <Parameter name="$config" type="Object" required="true">
+///     Parameter $config.
+///   </Parameter>
+///   <ReturnType type="Result<mixed, string>" />
+/// </Function>
 export function connectSync($config: Object): Result<mixed, string>
+
+/// docid: phpx/db-mysql/querySync()
+/// <Function name="querySync">
+///   <Description>PHPX standard module function `querySync` from `db-mysql`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <Parameter name="$sql" type="string" required="true" typeLink="/docs/php/types/string">
+///     Parameter $sql.
+///   </Parameter>
+///   <Parameter name="$params" type="array" required="false" typeLink="/docs/php/types/array">
+///     Parameter $params.
+///   </Parameter>
+///   <ReturnType type="Result<Object<" />
+/// </Function>
 export function querySync($handle: mixed, $sql: string, $params: array = []): Result<Object<{ rows: array<Object> }>, string>
+
+/// docid: phpx/db-mysql/queryOneSync()
+/// <Function name="queryOneSync">
+///   <Description>PHPX standard module function `queryOneSync` from `db-mysql`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <Parameter name="$sql" type="string" required="true" typeLink="/docs/php/types/string">
+///     Parameter $sql.
+///   </Parameter>
+///   <Parameter name="$params" type="array" required="false" typeLink="/docs/php/types/array">
+///     Parameter $params.
+///   </Parameter>
+///   <ReturnType type="Result<Object, string>" />
+/// </Function>
 export function queryOneSync($handle: mixed, $sql: string, $params: array = []): Result<Object, string>
+
+/// docid: phpx/db-mysql/execSync()
+/// <Function name="execSync">
+///   <Description>PHPX standard module function `execSync` from `db-mysql`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <Parameter name="$sql" type="string" required="true" typeLink="/docs/php/types/string">
+///     Parameter $sql.
+///   </Parameter>
+///   <Parameter name="$params" type="array" required="false" typeLink="/docs/php/types/array">
+///     Parameter $params.
+///   </Parameter>
+///   <ReturnType type="Result<Object<" />
+/// </Function>
 export function execSync($handle: mixed, $sql: string, $params: array = []): Result<Object<{ affected_rows: int }>, string>
+
+/// docid: phpx/db-mysql/beginSync()
+/// <Function name="beginSync">
+///   <Description>PHPX standard module function `beginSync` from `db-mysql`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <ReturnType type="Result<Object, string>" />
+/// </Function>
 export function beginSync($handle: mixed): Result<Object, string>
+
+/// docid: phpx/db-mysql/commitSync()
+/// <Function name="commitSync">
+///   <Description>PHPX standard module function `commitSync` from `db-mysql`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <ReturnType type="Result<Object, string>" />
+/// </Function>
 export function commitSync($handle: mixed): Result<Object, string>
+
+/// docid: phpx/db-mysql/rollbackSync()
+/// <Function name="rollbackSync">
+///   <Description>PHPX standard module function `rollbackSync` from `db-mysql`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <ReturnType type="Result<Object, string>" />
+/// </Function>
 export function rollbackSync($handle: mixed): Result<Object, string>
+
+/// docid: phpx/db-mysql/closeSync()
+/// <Function name="closeSync">
+///   <Description>PHPX standard module function `closeSync` from `db-mysql`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <ReturnType type="Result<Object, string>" />
+/// </Function>
 export function closeSync($handle: mixed): Result<Object, string>
 
+/// docid: phpx/db-mysql/query_one()
+/// <Function name="query_one">
+///   <Description>PHPX standard module function `query_one` from `db-mysql`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <Parameter name="$sql" type="string" required="true" typeLink="/docs/php/types/string">
+///     Parameter $sql.
+///   </Parameter>
+///   <Parameter name="$params" type="array" required="false" typeLink="/docs/php/types/array">
+///     Parameter $params.
+///   </Parameter>
+///   <ReturnType type="Result<Object, string>" />
+/// </Function>
 export function query_one($handle: mixed, $sql: string, $params: array = []): Result<Object, string>

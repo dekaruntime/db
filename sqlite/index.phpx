@@ -114,34 +114,116 @@ export function closeSync($handle) {
     return db_close_sync($handle)
 }
 
+/// docid: phpx/db-sqlite/connect()
+/// <Function name="connect">
+///   <Description>PHPX standard module function `connect` from `db-sqlite`.</Description>
+///   <Parameter name="$config" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $config.
+///   </Parameter>
+///   <ReturnType type="mixed" typeLink="/docs/php/types/mixed" />
+/// </Function>
 export async function connect($config) {
     return await openHandle('sqlite', $config)
 }
 
+/// docid: phpx/db-sqlite/query()
+/// <Function name="query">
+///   <Description>PHPX standard module function `query` from `db-sqlite`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <Parameter name="$sql" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $sql.
+///   </Parameter>
+///   <Parameter name="$params" type="mixed" required="false" typeLink="/docs/php/types/mixed">
+///     Parameter $params.
+///   </Parameter>
+///   <ReturnType type="mixed" typeLink="/docs/php/types/mixed" />
+/// </Function>
 export async function query($handle, $sql, $params = []) {
     return await db_query($handle, $sql, $params)
 }
 
+/// docid: phpx/db-sqlite/queryOne()
+/// <Function name="queryOne">
+///   <Description>PHPX standard module function `queryOne` from `db-sqlite`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <Parameter name="$sql" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $sql.
+///   </Parameter>
+///   <Parameter name="$params" type="mixed" required="false" typeLink="/docs/php/types/mixed">
+///     Parameter $params.
+///   </Parameter>
+///   <ReturnType type="mixed" typeLink="/docs/php/types/mixed" />
+/// </Function>
 export async function queryOne($handle, $sql, $params = []) {
     return await db_query_one($handle, $sql, $params)
 }
 
+/// docid: phpx/db-sqlite/exec()
+/// <Function name="exec">
+///   <Description>PHPX standard module function `exec` from `db-sqlite`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <Parameter name="$sql" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $sql.
+///   </Parameter>
+///   <Parameter name="$params" type="mixed" required="false" typeLink="/docs/php/types/mixed">
+///     Parameter $params.
+///   </Parameter>
+///   <ReturnType type="mixed" typeLink="/docs/php/types/mixed" />
+/// </Function>
 export async function exec($handle, $sql, $params = []) {
     return await db_exec($handle, $sql, $params)
 }
 
+/// docid: phpx/db-sqlite/begin()
+/// <Function name="begin">
+///   <Description>PHPX standard module function `begin` from `db-sqlite`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <ReturnType type="mixed" typeLink="/docs/php/types/mixed" />
+/// </Function>
 export async function begin($handle) {
     return await db_begin($handle)
 }
 
+/// docid: phpx/db-sqlite/commit()
+/// <Function name="commit">
+///   <Description>PHPX standard module function `commit` from `db-sqlite`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <ReturnType type="mixed" typeLink="/docs/php/types/mixed" />
+/// </Function>
 export async function commit($handle) {
     return await db_commit($handle)
 }
 
+/// docid: phpx/db-sqlite/rollback()
+/// <Function name="rollback">
+///   <Description>PHPX standard module function `rollback` from `db-sqlite`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <ReturnType type="mixed" typeLink="/docs/php/types/mixed" />
+/// </Function>
 export async function rollback($handle) {
     return await db_rollback($handle)
 }
 
+/// docid: phpx/db-sqlite/close()
+/// <Function name="close">
+///   <Description>PHPX standard module function `close` from `db-sqlite`.</Description>
+///   <Parameter name="$handle" type="mixed" required="true" typeLink="/docs/php/types/mixed">
+///     Parameter $handle.
+///   </Parameter>
+///   <ReturnType type="mixed" typeLink="/docs/php/types/mixed" />
+/// </Function>
 export async function close($handle) {
     return await db_close($handle)
 }
